@@ -1,0 +1,77 @@
+name: Update Server History
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-history:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Add current online point
+        run: |
+          node <<'NODE'
+          const fs = require("fs/promises");
+          const path = require("path");
+
+          const SERVER_IP = "ffland.online";
+          const HISTORY_FILE = path.join("data", "server-history.json");
+          const MAX_POINTS = 100000;
+
+          async function readHistory() {
+            try {
+              const raw = await fs.readFile(HISTORY_FILE, "utf8");
+              const parsed = JSON.parse(raw);
+              return Array.isArray(parsed) ? parsed : [];
+            } catch {
+              return [];
+            }
+          }
+
+          const response = await fetch(`https://api.mcsrvstat.us/3/${encodeURIComponent(SERVER_IP)}`, {
+            headers: {
+              Accept: "application/json",
+              "User-Agent": "FFLandSiteHistory/1.0"
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`mcsrvstat HTTP ${response.status}`);
+          }
+
+          const data = await response.json();
+          const online = Boolean(data.online);
+          const players = online ? Number(data.players?.online ?? 0) : 0;
+          const version =
+            data.protocol?.name ??
+            (typeof data.version === "string" ? data.version : data.version?.name) ??
+            null;
+
+          const history = await readHistory();
+          history.push({
+            timestamp: new Date().toISOString(),
+            online: Number.isFinite(players) ? players : 0,
+            ping: null,
+            status: online ? "online" : "offline",
+            version,
+            source: "mcsrvstat-github-action"
+          });
+
+          await fs.mkdir(path.dirname(HISTORY_FILE), { recursive: true });
+          await fs.writeFile(HISTORY_FILE, `${JSON.stringify(history.slice(-MAX_POINTS), null, 2)}\n`, "utf8");
+          NODE
+
+      - name: Commit updated history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/server-history.json
+          git diff --cached --quiet || git commit -m "Update server online history"
+          git push
