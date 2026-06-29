@@ -29,7 +29,7 @@ const CONFIG = {
     social: [
       { title: "VK", hint: "", url: "https://vk.com/fflandmain", icon: "VK" },
       { title: "Telegram", hint: "", url: "https://t.me/fflandmain", icon: "TG" },
-      { title: "Discord (скоро)", hint: "", url: "https://discord.com/", icon: "DS" },
+      { title: "Discord", hint: "", url: "https://discord.gg/Yn6hUMAKjp", icon: "DS" },
       { title: "YouTube (скоро)", hint: "", url: "https://youtube.com/", icon: "YT" }
     ]
   },
