@@ -8,7 +8,6 @@ const CONFIG = {
     version: "1.21.11",
     upcomingWipe: "Мы открылись!",
     accessMode: "Вход по заявке",
-    // GitHub Pages не запускает backend, поэтому статус берется напрямую из публичного API.
     realStatusProvider: "mcsrvstat",
     statusRefreshMs: 60000,
     heroLead:
@@ -100,7 +99,6 @@ const CONFIG = {
     { initials: "AD", name: "Jikop_Grisha, Dve_Olivki, vanko68", role: "Администраторы", text: "Следят за порядком, игровыми процессами, и игроками", tags: ["Порядок", "Поддержка"] },
     { initials: "CM", name: "Ищем контент-мейкеров!", role: "Контент-Мейкер", text: "Создает видео, делает наш проект популярным, поддерживает онлайн. По поводу заявки пишите в личные сообшения ТГК!", tags: ["Контент", "Видео"] },
   ],
-  // Большой текст правил лежит отдельно, чтобы случайные кавычки не ломали JavaScript.
   rulesFile: "./data/rules.txt"
 };
 
