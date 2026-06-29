@@ -4,7 +4,7 @@ const CONFIG = {
     tagline: ""
   },
   server: {
-    ip: "ffland.online",
+    ip: "ffland.space",
     version: "1.21.11",
     upcomingWipe: "Мы открылись!",
     accessMode: "Вход по заявке",
