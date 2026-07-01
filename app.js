@@ -75,8 +75,8 @@ const CONFIG = {
     { rating: "Пока ничего не говорят) Мало людей играют", text: "тут пока ничего нету", author: "Владелец проекта" },
   ],
   statistics: [
-    { value: 90, label: "дней серверу", suffix: "" },
-    { value: 55, label: "игроков в сообществе", suffix: "+" },
+    { value: 81, label: "дней серверу", suffix: "" },
+    { value: 60, label: "игроков в сообществе", suffix: "+" },
     { value: 0, label: "ивентов за сезон", suffix: "" },
     { value: 2, label: "крупных построек", suffix: "" }
   ],
