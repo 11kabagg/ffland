@@ -93,8 +93,7 @@ const CONFIG = {
   historyStages: [
   ],
   timelineEvents: [
-    { date: "Сегодня", title: "Текущий этап сезона", text: "...", tag: "Вы здесь" },
-    { date: "Переезд", title: "Переезд на новый домен", text: "Мы переехали на новый домен ffland.space", tag: "Вы здесь" },
+    { date: "Переезд", title: "Переезд на новый домен", text: "Мы переехали на новый домен ffland.space", tag: "Домен" },
     { date: "...", title: "пока пусто", text: "...", tag: "..." },
     { date: "...", title: "пока пусто", text: "...", tag: "..." },
     { date: "...", title: "пока пусто", text: "...", tag: "..." },
