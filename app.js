@@ -79,10 +79,10 @@ const CONFIG = {
     { rating: "Пока ничего не говорят) Мало людей играют", text: "тут пока ничего нету", author: "Владелец проекта" },
   ],
   statistics: [
-    { value: 81, label: "дней серверу", suffix: "" },
+    { value: 83, label: "дней серверу", suffix: "" },
     { value: 60, label: "игроков в сообществе", suffix: "+" },
     { value: 0, label: "ивентов за сезон", suffix: "" },
-    { value: 2, label: "крупных построек", suffix: "" }
+    { value: 3, label: "крупных построек", suffix: "" }
   ],
   gallery: [
     { title: "Душевные посиделки", caption: "", tag: "Атмосфера", image: "./assets/screenshots/vaib1.png" },
