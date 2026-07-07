@@ -30,7 +30,7 @@ const CONFIG = {
       { title: "VK", hint: "", url: "https://vk.com/fflandmain", icon: "VK" },
       { title: "Telegram", hint: "", url: "https://t.me/fflandmain", icon: "TG" },
       { title: "Discord", hint: "", url: "https://discord.gg/Yn6hUMAKjp", icon: "DS" },
-      { title: "YouTube (скоро)", hint: "", url: "https://youtube.com/", icon: "YT" }
+      { title: "YouTube", hint: "", url: "https://www.youtube.com/@fflandmain", icon: "YT" }
     ]
   },
   serverCommands: [
@@ -79,7 +79,7 @@ const CONFIG = {
     { rating: "Пока ничего не говорят) Мало людей играют", text: "тут пока ничего нету", author: "Владелец проекта" },
   ],
   statistics: [
-    { value: 83, label: "дней серверу", suffix: "" },
+    { value: 85, label: "дней серверу", suffix: "+" },
     { value: 60, label: "игроков в сообществе", suffix: "+" },
     { value: 0, label: "ивентов за сезон", suffix: "" },
     { value: 3, label: "крупных построек", suffix: "" }
